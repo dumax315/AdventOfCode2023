@@ -1,28 +1,27 @@
-f = open("./day1.txt", "r")
-res = 0
-listOfLines = f.read().split("\n")
+from aocd import get_data
 
-i = 0
+res = 0
+listOfLines = get_data(day=1, year=2023).split("\n")
+
 words =  ["one", "two", "three", "four", "five", "six", "seven", "eight","nine"]
 
 for line in listOfLines:
-    # iline = int(line)
-    print(f"  line {i} is \n{line}")
-    temp = 0
+    print(f"line is {line}")
+    numberForThisLine = 0
 
-    j = 0
+    indexOfLine = 0
     done = False
     for ch in line:
-        j += 1
+        indexOfLine += 1
         try:
-            temp += int(ch)*10
+            numberForThisLine += int(ch)*10
             break
         except:
             wwid = 1
             for word in words:
-                if(word in line[:j]):
-                    print(line[:j])
-                    temp += wwid*10
+                if(word in line[:indexOfLine]):
+                    print(line[:indexOfLine])
+                    numberForThisLine += wwid*10
                     done = True
                     break
                 wwid+=1
@@ -31,20 +30,20 @@ for line in listOfLines:
 
 
             pass
-    j = len(line)
+    indexOfLine = len(line)
     done = False
     for ch in line[::-1]:
-        j -= 1
+        indexOfLine -= 1
         try:
-            temp += int(ch)
+            numberForThisLine += int(ch)
             break
         except:
             wwid = 1
             for word in words:
-                if(word in line[j:]):
-                    print(line[j:])
+                if(word in line[indexOfLine:]):
+                    print(line[indexOfLine:])
                     
-                    temp += wwid
+                    numberForThisLine += wwid
                     print(wwid)
                     done = True
                     break
@@ -54,15 +53,7 @@ for line in listOfLines:
         if(done):
             break
 
-    res += temp
-    print(temp)
-
-    i+=1
-
-# for i in range(len(listOfLines)):
-#     iline = int(listOfLines[i])
-#     print(f"  line {i} is \n{listOfLines[i]}")
-
-#     res += int(iline)
+    res += numberForThisLine
+    print(numberForThisLine)
 
 print(f"result = {res}")
