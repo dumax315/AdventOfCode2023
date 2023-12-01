@@ -8,4 +8,4 @@ for line in listOfLines:
 
     i+=1
 
-print(f"result = \n{res}")
+print(f"result = {res}")
