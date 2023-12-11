@@ -93,5 +93,5 @@ print(res)
 # f.write(toSave)
 # f.close()
 
-from aocd import submit
-submit(res, part="b", day=11, year=2023)
+# from aocd import submit
+# submit(res, part="b", day=11, year=2023)

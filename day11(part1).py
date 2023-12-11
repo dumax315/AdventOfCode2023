@@ -6,7 +6,7 @@ lineArr = [[y for y in x] for x in get_data(day=11, year=2023).split("\n")]
 
 # print(lineArr)
 # print(["." for x in range(len(lineArr[0]))])
-numLines = 999999
+numLines = 1
 i = 0
 while i < len(lineArr):
     shouldExp = True
