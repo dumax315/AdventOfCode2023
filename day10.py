@@ -132,6 +132,17 @@ print(lengthOfPipe/2)
 
 
 # print(blocksInside)
+filling = False
+for i, row in enumerate(blocksInside):
+    for j, item in enumerate(row):
+        
+        if(blocksInside[i][j] == 2):
+            filling = True
+        elif(filling and blocksInside[i][j] == 0):
+            
+            blocksInside[i][j] = 2
+        else:
+            filling = False
 
 toSave = ""
 for row in blocksInside:
@@ -141,4 +152,4 @@ for row in blocksInside:
 f = open("map.txt", "w")
 f.write(toSave)
 f.close()
-# I then opened this file and filled in the holes by hand and counted the 2s with contorl+F
+# I then opened the file counted the 2s with contorl+F
