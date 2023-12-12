@@ -144,6 +144,18 @@ for i, row in enumerate(blocksInside):
         else:
             filling = False
 
+filling = True
+for i, row in enumerate(blocksInside):
+    for j, item in enumerate(row):
+        
+        if(blocksInside[i][j] == 3):
+            filling = True
+        elif(filling and blocksInside[i][j] == 0):
+            
+            blocksInside[i][j] = 3
+        else:
+            filling = False
+
 toSave = ""
 for row in blocksInside:
     for item in row:
